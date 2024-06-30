@@ -64,7 +64,7 @@ Scaling is the process of normalizing the range of independent variables. In thi
 
 ### Training the Model
 
-Train the churn prediction model with:
+Train the churn prediction model (Logistic Regression) which beats Tree based models on this task with:
 
 ```bash
 python 1-train.py
@@ -111,6 +111,14 @@ streamlit run 4-chatbot.py
 ```
 
 The chatbot will interact with users and predict churn based on the model.
+
+## Limitations
+
+The current version of the Marketing Guru Chatbot is not designed for open-ended conversations. It takes a specific scenario as input, converts it to appropriate model inputs, and returns a prediction. The chatbot does not handle general conversational inputs well; messages like "Hi" or "Who are you" are hardcoded responses for now.
+
+### Usage Advice
+
+For the best experience, use the chatbot in a scenario-based manner: provide a specific customer scenario, and the chatbot will return the churn prediction. Future versions may include more advanced conversational capabilities.
 
 ## Contributing
 
