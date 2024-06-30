@@ -25,27 +25,48 @@ The Marketing Guru Chatbot is designed to help businesses predict customer churn
 
 Ensure you have Python installed on your system. You can install the required dependencies using:
 
-\`\`\`bash
+```bash
 pip install -r requirements.txt
-\`\`\`
+```
 
 ### Data Preprocessing
 
 Before training the model, preprocess the data using:
 
-\`\`\`bash
+```bash
 python 0-preprocess.py
-\`\`\`
+```
 
 This script will clean the data and prepare it for model training.
+
+### Feature Selection, Encoding, and Scaling
+
+#### Feature Selection
+
+Feature selection involves selecting the most relevant features from the dataset to improve the performance of the model. In this project, feature selection is handled using:
+
+- **Pandas**: For manipulating and selecting features.
+- **Scikit-learn**: For feature selection techniques such as variance threshold, recursive feature elimination, etc.
+
+#### Encoding
+
+Encoding is the process of converting categorical variables into numerical values. In this project, encoding is done using:
+
+- **Scikit-learn**: For label encoding and one-hot encoding of categorical features.
+
+#### Scaling
+
+Scaling is the process of normalizing the range of independent variables. In this project, scaling is performed using:
+
+- **Scikit-learn**: For standard scaling to ensure all features contribute equally to the model.
 
 ### Training the Model
 
 Train the churn prediction model with:
 
-\`\`\`bash
+```bash
 python 1-train.py
-\`\`\`
+```
 
 This script will train the model and save it along with label encoders and scalers in the `model/` directory.
 
@@ -53,9 +74,9 @@ This script will train the model and save it along with label encoders and scale
 
 Test the performance of the trained model using:
 
-\`\`\`bash
+```bash
 python 2-test.py
-\`\`\`
+```
 
 This script will evaluate the model on test data and print the performance metrics.
 
@@ -63,9 +84,9 @@ This script will evaluate the model on test data and print the performance metri
 
 Deploy the model as an API with FastAPI:
 
-\`\`\`bash
+```bash
 python 3-api.py
-\`\`\`
+```
 
 The API will be accessible at `http://127.0.0.1:8000`.
 
@@ -73,9 +94,9 @@ The API will be accessible at `http://127.0.0.1:8000`.
 
 Launch the chatbot interface using:
 
-\`\`\`bash
+```bash
 python 4-chatbot.py
-\`\`\`
+```
 
 The chatbot will interact with users and predict churn based on the model.
 
