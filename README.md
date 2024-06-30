@@ -3,6 +3,8 @@
 
 An AI-Powered Marketing Assistant for Churn Prediction
 
+![Marketing Guru Chatbot](images/example.png)
+
 ## Overview
 
 The Marketing Guru Chatbot is designed to help businesses predict customer churn and interact with users through a chatbot interface. This repository contains scripts for preprocessing data, training a churn prediction model, testing the model, deploying an API, and creating a chatbot.
@@ -52,13 +54,13 @@ Feature selection involves selecting the most relevant features from the dataset
 
 Encoding is the process of converting categorical variables into numerical values. In this project, encoding is done using:
 
-- **Scikit-learn**: For label encoding and one-hot encoding of categorical features.
+- **Scikit-learn Labelencoder**: For label encoding of categorical features.
 
 #### Scaling
 
 Scaling is the process of normalizing the range of independent variables. In this project, scaling is performed using:
 
-- **Scikit-learn**: For standard scaling to ensure all features contribute equally to the model.
+- **Scikit-learn StandardScaler**: For standard scaling to ensure all features contribute equally to the model.
 
 ### Training the Model
 
@@ -80,6 +82,16 @@ python 2-test.py
 
 This script will evaluate the model on test data and print the performance metrics.
 
+### Model Performance: Recall
+
+The recall for the positive class (customers who are likely to churn) is 79%. Recall is a crucial metric in this context because it measures the ability of the model to identify actual churners. High recall means that most of the customers who will churn are correctly identified, which is vital for taking proactive measures to retain them.
+
+#### Why Recall is Important
+
+- **Customer Retention**: Identifying customers who are likely to churn allows businesses to intervene and potentially retain these customers through targeted marketing efforts.
+- **Cost Efficiency**: The cost of retaining a customer is typically lower than acquiring a new one. High recall ensures that fewer churners are missed, reducing the overall cost of customer churn.
+- **Business Strategy**: High recall provides actionable insights, allowing businesses to develop more effective strategies for customer retention and satisfaction.
+
 ### Deploying the API
 
 Deploy the model as an API with FastAPI:
@@ -90,12 +102,12 @@ python 3-api.py
 
 The API will be accessible at `http://127.0.0.1:8000`.
 
-### Running the Chatbot
+### Running the Streamlit Chatbot
 
 Launch the chatbot interface using:
 
 ```bash
-python 4-chatbot.py
+streamlit run 4-chatbot.py
 ```
 
 The chatbot will interact with users and predict churn based on the model.

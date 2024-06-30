@@ -110,8 +110,8 @@ def predict_from_text(customer_description: CustomerDescription):
         print(confidence_score)
 
         if churn_prediction:
-            return f'The customer is predicted to churn with a confidence of {confidence_score}%. Consider taking actions to retain the customer.'
-        return f'The customer is not predicted to churn with a confidence of {confidence_score}%. Keep up the good work in retaining the customer.'
+            return f'The customer is predicted to churn. Consider taking actions to retain the customer.'
+        return f'The customer is not predicted to churn. Keep up the good work in retaining the customer.'
 
     except Exception as e:
         logger.error(f"Error in processing request: {e}")
